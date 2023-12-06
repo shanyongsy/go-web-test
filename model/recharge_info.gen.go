@@ -10,7 +10,7 @@ import (
 
 const TableNameRechargeInfo = "recharge_info"
 
-// RechargeInfo mapped from table <recharge_info>
+// RechargeInfo Direct charging data sheet
 type RechargeInfo struct {
 	ID                   int64     `gorm:"column:id;primaryKey;autoIncrement:true;comment:ID" json:"id"`                                        // ID
 	TradeNumber          string    `gorm:"column:trade_number;not null;type:varchar(255);comment:Delivery service order number" json:"trade_number"`              // Delivery service order number
@@ -31,7 +31,7 @@ type RechargeInfo struct {
 	TradeUpdateAt        time.Time `gorm:"column:trade_update_at;not null" json:"trade_update_at"`
 	TryRechargeCount     int32     `gorm:"column:try_recharge_count;not null" json:"try_recharge_count"`
 	Status               int32     `gorm:"column:status;not null;comment:Status: 0- Not processed yet; 2- Partial shipment of goods; 3- Delivery completed;" json:"status"` // Status: 0- Not processed yet; 2- Partial shipment of goods; 3- Delivery completed;
-	GameMoney            int32     `gorm:"column:game_money;not null;comment:Number of game coins corresponding to each transaction" json:"game_money"`                     // Number of game coins corresponding to each transaction
+	PriceType            int32     `gorm:"column:price_type;not null;comment:Recharge card type, such as 5 15 50 100" json:"price_type"`                                    // Recharge card type, such as 5 15 50 100
 	GameType             int32     `gorm:"column:game_type;not null;comment:game type 1-inter or 2-fee" json:"game_type"`                                                   // game type 1-inter or 2-fee
 }
 

@@ -11,12 +11,12 @@ cd ./mysql
 ```
 ### 启动 service
 ```bash
-./run
+./web-demo
 ```
 #### run 命令行参数
 ```bash
-$ ./run --help
-Usage of ./run:
+$ ./web-demo --help
+Usage of ./web-demo:
   -dbhost string
         database host (default "localhost")
   -dbname string

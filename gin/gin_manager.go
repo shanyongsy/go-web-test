@@ -40,10 +40,10 @@ func StartGinServer(port string, https bool, db *gorm_mgr.DBManager) (*http.Serv
 		c.Next()
 	})
 
-	r.POST("/recharge", handleInterRecharge)
-	r.POST("/simple-recharge", handleInterSimpleRecharge)
-	r.POST("/check", handleInterCheck)
-	r.POST("/status-change", handelChangeStatus)
+	// r.POST("/recharge", handleInterRecharge)
+	// r.POST("/simple-recharge", handleInterSimpleRecharge)
+	// r.POST("/check", handleInterCheck)
+	// r.POST("/status-change", handelChangeStatus)
 	r.POST("/spider", handleInterRechargeFromSpider)
 	r.GET("/ping", handlePing)
 

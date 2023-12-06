@@ -70,7 +70,7 @@ func rechargeWithSpider(info *model.RechargeInfo) (bool, error) {
 	request.Count = info.Count
 	request.GameType = info.GameType
 	request.ShopType = info.ShopType
-	request.GameMoney = info.GameMoney
+	request.PriceType = info.PriceType
 
 	requestJSON, _ := json.Marshal(request)
 	postURL := "http://localhost:8080/spider"

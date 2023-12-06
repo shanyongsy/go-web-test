@@ -1,1 +1,1 @@
-go build -o go-web-test
+go build -o web-demo

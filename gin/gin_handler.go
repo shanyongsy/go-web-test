@@ -3,6 +3,7 @@ package gin
 import (
 	"log"
 	"net/http"
+	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/shanyongsy/go-web-test/msg"
@@ -133,6 +134,9 @@ func handleInterRechargeFromSpider(c *gin.Context) {
 
 	var response msg.RechargeResponseWithSpider
 	response.Status = true
+
+	// 人为设置延迟
+	time.Sleep(16 * time.Second)
 
 	log.Println("[HTTP][Spider], recharge response, value is ", response)
 	c.JSON(http.StatusOK, response)

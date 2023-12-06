@@ -77,7 +77,7 @@ func (m *DBManager) insertRechargeRecord(record *msg.RechargeRequest, tradeNo st
 		if err != nil {
 			log.Printf("[DB] error converting game money to int: %v, str is %v", err, record.PriceType)
 		}
-		rechargeInfo.GameMoney = int32(i)
+		rechargeInfo.PriceType = int32(i)
 	}
 	{
 		i, err := strconv.Atoi(record.GameType)
@@ -126,7 +126,7 @@ func (m *DBManager) insertRechargeRecord(record *msg.RechargeRequest, tradeNo st
 		}
 
 		// GameMoney
-		switch rechargeInfo.GameMoney {
+		switch rechargeInfo.PriceType {
 		case 1: // 1
 		case 15: // 15
 		case 30: // 30
@@ -137,7 +137,7 @@ func (m *DBManager) insertRechargeRecord(record *msg.RechargeRequest, tradeNo st
 			}
 		default:
 			{
-				log.Printf("[DB] GameMoney is invalid, GameMoney is %v", rechargeInfo.GameMoney)
+				log.Printf("[DB] GameMoney is invalid, PriceType is %v", rechargeInfo.PriceType)
 				return errors.New("GameMoney is invalid")
 			}
 		}

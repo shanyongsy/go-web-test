@@ -17,7 +17,7 @@ func main() {
 	function.PreStart()
 
 	https := flag.Bool("https", false, "use HTTPS")
-	port := flag.String("port", "8080", "server port")
+	port := flag.String("port", "8081", "server port")
 
 	// dbHost := flag.String("dbhost", "localhost", "database host")
 	// dbPort := flag.String("dbport", "3306", "database port")
