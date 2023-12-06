@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+
+  mysql:
+    # image: "docker.shiyou.kingsoft.com/mirror/mysql:8.0.28"
+    image: "mysql:8.0.28"
+    container_name: "charge-server-mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+      TZ: Asia/Shanghai
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./db_script/sql:/opt/sql
+      - ./db_script/init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"

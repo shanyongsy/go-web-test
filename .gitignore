@@ -1,0 +1,4 @@
+*.log
+run
+go-web-test
+mysql/data/
