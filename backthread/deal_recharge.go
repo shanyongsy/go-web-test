@@ -63,14 +63,6 @@ func rechargeWithSpider(info *model.RechargeInfo) (bool, error) {
 	client := &http.Client{}
 
 	request := msg.RechargeRequestWithSpider{}
-	request.TradeNo = info.TradeNumber
-	request.GoodsID = info.ShopGoodsID
-	request.GoodsName = info.ShopGoodsName
-	request.AccountID = info.ShopAccountID
-	request.Count = info.Count
-	request.GameType = info.GameType
-	request.ShopType = info.ShopType
-	request.PriceType = info.PriceType
 
 	requestJSON, _ := json.Marshal(request)
 	postURL := "http://localhost:8080/spider"
