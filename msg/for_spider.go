@@ -16,5 +16,6 @@ type RechargeRequestWithSpider struct {
 
 // Recharge response
 type RechargeResponseWithSpider struct {
-	Status bool `json:"status" binding:"required"` // 状态 true:成功 false:失败
+	Message string `json:"message"`                   // 消息
+	Status  bool   `json:"status" binding:"required"` // 状态 true:成功 false:失败
 }
