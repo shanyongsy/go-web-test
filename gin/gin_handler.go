@@ -84,6 +84,12 @@ func handlePing(c *gin.Context) {
 	log.Println("pong")
 }
 
+func handleHealth(c *gin.Context) {
+	c.String(http.StatusOK, "ok")
+
+	// slog.Info("health ok")
+}
+
 func handleInterSimpleRecharge(c *gin.Context) {
 	var request msg.RechargeRequest
 

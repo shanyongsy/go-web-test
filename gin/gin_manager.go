@@ -46,6 +46,7 @@ func StartGinServer(port string, https bool, db *gorm_mgr.DBManager) (*http.Serv
 	// r.POST("/status-change", handelChangeStatus)
 	r.POST("/vc/notice", handleInterRechargeFromSpider)
 	r.GET("/ping", handlePing)
+	r.GET("/health", handleHealth)
 
 	server := &http.Server{
 		Addr:    ":" + port,
